@@ -10,10 +10,12 @@ Include files
 ### Windows
 * x86
 * x86_64
+
 ### Linux
 * x86
 * x86_64
 * ARM-EL
 * ARM-HF
+
 ### macOS
 * x86_64
