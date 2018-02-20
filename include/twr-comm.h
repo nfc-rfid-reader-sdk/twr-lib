@@ -2,7 +2,7 @@
  * twr-uid-comm.h
  *
  *  Created on: 30.01.2018.
- *      Author: srkos
+ *      Author: Digital Logic
  */
 
 #ifndef TWR_COMM_H_

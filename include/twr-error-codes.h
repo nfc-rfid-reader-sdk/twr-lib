@@ -2,7 +2,7 @@
  * twr-error-codes.h
  *
  *  Created on: 01.02.2018.
- *      Author: srkos
+ *      Author: Digital Logic
  */
 
 #ifndef TWR_ERROR_CODES_H_
