@@ -3,6 +3,8 @@
  *
  *  Created on: 30.01.2018.
  *      Author: Digital Logic
+ *
+ *  Library version : 4.1
  */
 
 #ifndef TWR_COMM_H_
@@ -91,13 +93,13 @@ TWR_STATUS TWR_registerCB_Error(void *CB_F);
  * Register call back function for getting UID events
  *
  * prototype:
- * 	int fCB_UID(c_string sn, u8 uid[], int uid_len, int control_info);
+ * 	int fCB_OK(c_string sn, u8 uid[], int uid_len, int control_info);
  *
  * @param CB_F pointer to function with prototype like above
  * @return registration status
  */
 TWR_API
-TWR_STATUS TWR_registerCB_UID(void *CB_F);
+TWR_STATUS TWR_registerCB_OK(void *CB_F);
 
 /**
  * Send RF packet with acknowledge to reader with specific SN

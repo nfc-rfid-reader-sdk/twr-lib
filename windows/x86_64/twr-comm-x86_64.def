@@ -39,4 +39,4 @@ EXPORTS
     TWR_USB_Info @38
     TWR_USB_Open @39
     TWR_registerCB_Error @40
-    TWR_registerCB_UID @41
+    TWR_registerCB_OK @41
