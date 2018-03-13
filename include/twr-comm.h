@@ -51,6 +51,7 @@ typedef const char * c_string;
 typedef unsigned char u8;
 
 ////////////////////////////////////////////////////////////////////
+///
 
 /**
  * Return library version in format "4.0.0"
@@ -74,8 +75,43 @@ TWR_API
 c_string TWR_Status2Str(TWR_STATUS twr_status);
 
 ////////////////////////////////////////////////////////////////////
-//// SN-UID only
+/// Descriptions about call back function prototypes
+/// definition for pointer of Call back function
+
+/**
+ * function prototype like :
+ * 		int CB_Error(int err_id, c_string err_msg);
+ *
+ * @param sn
+ * @param err_id
+ * @param err_msg
+ * @return
+ */
+typedef int (*CB_Error_t)(int err_id, c_string err_msg);
+
+/**
+ * function prototype like :
+ * 		int CB_Info(c_string information);
+ *
+ * @param information
+ * @return
+ */
+typedef int (*CB_Info_t)(c_string information);
+
+/**
+ * function prototype like :
+ * 		int CB_OK(c_string sn, u8 uid[], int uid_len, int control_info);
+ *
+ * @param sn
+ * @param uid
+ * @param uid_len
+ * @param control_info
+ * @return
+ */
+typedef int (*CB_OK_t)(c_string sn, u8 uid[], int uid_len, int control_info);
+
 ////////////////////////////////////////////////////////////////////
+/// Register call back functions in the library
 
 /**
  * Register call back function for errors
@@ -90,6 +126,19 @@ TWR_API
 TWR_STATUS TWR_registerCB_Error(void *CB_F);
 
 /**
+ * Register call back function for information
+ *
+ * prototype:
+ * 	int fCB_Info(c_string information);
+ *    information is static c-string in library
+ *
+ * @param CB_F pointer to function with prototype like above
+ * @return registration status
+ */
+TWR_API
+TWR_STATUS TWR_registerCB_Info(void *CB_F);
+
+/**
  * Register call back function for getting UID events
  *
  * prototype:
@@ -100,6 +149,9 @@ TWR_STATUS TWR_registerCB_Error(void *CB_F);
  */
 TWR_API
 TWR_STATUS TWR_registerCB_OK(void *CB_F);
+
+////////////////////////////////////////////////////////////////////
+///
 
 /**
  * Send RF packet with acknowledge to reader with specific SN
@@ -115,6 +167,9 @@ TWR_STATUS TWR_registerCB_OK(void *CB_F);
 TWR_API
 TWR_STATUS TWR_Packet_Ack(c_string sn, u8 uid[], int uid_len, int control_info,
 		int r_status);
+
+////////////////////////////////////////////////////////////////////
+///
 
 /**
  * Constantly execute TWR manager to make call back functions to work

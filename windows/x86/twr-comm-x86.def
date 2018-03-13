@@ -39,4 +39,5 @@ EXPORTS
     TWR_USB_Info = TWR_USB_Info@52 @38
     TWR_USB_Open = TWR_USB_Open@4 @39
     TWR_registerCB_Error = TWR_registerCB_Error@4 @40
-    TWR_registerCB_OK = TWR_registerCB_OK@4 @41
+    TWR_registerCB_Info = TWR_registerCB_Info@4 @41
+    TWR_registerCB_OK = TWR_registerCB_OK@4 @42
