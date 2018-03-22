@@ -4,7 +4,7 @@
  *  Created on: 30.01.2018.
  *      Author: Digital Logic
  *
- *  Library version : 4.1
+ *  Library version : 4.2
  */
 
 #ifndef TWR_COMM_H_
